@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">     
+<title>TABLE RESPONSIVE</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+ 
+
+   <style>
+        
+     *{margin:0;padding:0;}
+    
+    .tableresponsive{
+    
+   
+    margin:15px auto;
+    }
+     
+    .tabledata{
+    width:100%;
+    padding:0;
+    margin:0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 13px;
+    color:#9c9b99;
+    }
+    .tabledata thead tr th{
+    background:#0eac38;
+    color:#fff;
+    text-align: center;
+    padding:7px 5px;
+    
+    }
+    .tabledata tbody tr td{
+    padding:7px 5px;
+    text-align: center;
+    cursor:pointer;
+    border-bottom: 1px solid #d6d6d6;
+    }
+    
+    .tabledataa a{
+    display:inline-block;
+    border: 1px solid #189e3d;
+    padding:5px;
+    color:#a09a9a;
+    background:#fff;
+    -webkit-transition: all .25s ease-out;
+    -moz-transition: all .25s ease-out;
+    -ms-transition: all .25s ease-out;
+    -o-transition: all .25s ease-out;
+    transition: all .25s ease-out;     
+    }
+    .tabledataa a:hover{
+    background:#189e3d;
+    color:#fff;
+    }   
+    .tabledataa tbody tr:hover td{
+    background:#7f7f7f;
+    color:#fff;
+    }
+      
+      
+      
+      
+      
+      @media only screen and (max-width: 430px) {
+      
+       .tableresponsive table,
+       .tableresponsive thead, 
+       .tableresponsive tbody, 
+       .tableresponsive th, 
+       .tableresponsive td, 
+       .tableresponsive tr
+       { 
+       
+          display:block ;
+         
+       }  
+       
+       .tableresponsive thead tr { 
+	      position: absolute ;
+		    top: -9999px;
+		    left: -9999px;
+	     }   
+       .tableresponsive tr { border: 1px solid #ccc; }
+ 
+	     .tableresponsive td { 
+		
+           border: none;
+           border-bottom: 1px solid #eee; 
+           position: relative;
+           padding-left: 45% !important; 
+           white-space: normal;
+           text-align:left;
+           
+	      }
+ 
+        .tableresponsive td:before { 
+		
+           position: absolute;
+           top: 6px;
+           left: 6px;
+           width: 50%; 
+           padding-right: 10px; 
+           white-space: nowrap;
+           text-align:left;
+           font-weight: bold;
+	       }
+ 
+
+	      .tableresponsive td:before { content: attr(data-title); }
+        
+        }
+   
+   </style>
+
+  
+  
+</head>                  
+
+<body>
+                        
+  
+     <div class="tableresponsive">
+       <table class="tabledata">
+              <thead>
+                <tr>
+                    <th>No</th>
+                    <th>ประเภท</th>
+                    <th>วันที่ประมูล</th>
+                    <th>ยี่ห้อ</th>
+                    <th>รุ่น </th>
+                    <th>ปี</th>
+                    <th>สี</th>
+                    <th>เกียร์</th> 
+                    <th>ซีซี</th>            
+                    <th>อุปกร</th>
+                    <th>ราคาเปิด</th>
+                    <th>ราคาจบ</th>              
+                </tr>
+              </thead>
+               
+               <tbody>
+               
+                  <tr>
+                     <td data-title="No"> 1</td>
+                     <td data-title="ประเภท">กระบะ 4 ล้อ</td>
+                     <td data-title="วันที่ประมูล">12/10/2011</td>
+                     <td data-title="ยี่ห้อ">TOYOTA</td>
+                     <td data-title="รุ่น">COMMUTER</td>
+                     <td data-title="ปี">2003</td>
+                     <td data-title="สี">เทา</td>
+                     <td data-title="เกียร์">Auto</td>
+                     <td data-title="ซีซี">3.0</td>
+                     <td data-title="อุปกร์">อ ว CD ท ม ก</td>
+                     <td data-title="ราคาเปิด">120,500</td>
+                     <td data-title="ราคาจบ">120,500</td>                  
+                  </tr>
+                   <tr>
+                     <td data-title="No"> 2 </td>
+                     <td data-title="ประเภท">กระบะ 4 ล้อ</td>
+                     <td data-title="วันที่ประมูล">12/10/2011</td>
+                     <td data-title="ยี่ห้อ">TOYOTA</td>
+                     <td data-title="รุ่น">COMMUTER</td>
+                     <td data-title="ปี">2003</td>
+                     <td data-title="สี">เทา</td>
+                     <td data-title="เกียร์">Auto</td>
+                     <td data-title="ซีซี">3.0</td>
+                     <td data-title="อุปกร์">อ ว CD ท ม ก</td>
+                     <td data-title="ราคาเปิด">120,500</td>
+                     <td data-title="ราคาจบ">120,500</td>                  
+                  </tr>
+                   <tr>
+                     <td data-title="No"> 3 </td>
+                     <td data-title="ประเภท">กระบะ 4 ล้อ</td>
+                     <td data-title="วันที่ประมูล">12/10/2011</td>
+                     <td data-title="ยี่ห้อ">TOYOTA</td>
+                     <td data-title="รุ่น">COMMUTER</td>
+                     <td data-title="ปี">2003</td>
+                     <td data-title="สี">เทา</td>
+                     <td data-title="เกียร์">Auto</td>
+                     <td data-title="ซีซี">3.0</td>
+                     <td data-title="อุปกร์">อ ว CD ท ม ก</td>
+                     <td data-title="ราคาเปิด">120,500</td>
+                     <td data-title="ราคาจบ">120,500</td>                  
+                  </tr>
+                   <tr>
+                     <td data-title="No"> 4 </td>
+                     <td data-title="ประเภท">กระบะ 4 ล้อ</td>
+                     <td data-title="วันที่ประมูล">12/10/2011</td>
+                     <td data-title="ยี่ห้อ">TOYOTA</td>
+                     <td data-title="รุ่น">COMMUTER</td>
+                     <td data-title="ปี">2003</td>
+                     <td data-title="สี">เทา</td>
+                     <td data-title="เกียร์">Auto</td>
+                     <td data-title="ซีซี">3.0</td>
+                     <td data-title="อุปกร์">อ ว CD ท ม ก</td>
+                     <td data-title="ราคาเปิด">120,500</td>
+                     <td data-title="ราคาจบ">120,500</td>                  
+                  </tr>
+                   <tr>
+                     <td data-title="No"> 5 </td>
+                     <td data-title="ประเภท">กระบะ 4 ล้อ</td>
+                     <td data-title="วันที่ประมูล">12/10/2011</td>
+                     <td data-title="ยี่ห้อ">TOYOTA</td>
+                     <td data-title="รุ่น">COMMUTER</td>
+                     <td data-title="ปี">2003</td>
+                     <td data-title="สี">เทา</td>
+                     <td data-title="เกียร์">Auto</td>
+                     <td data-title="ซีซี">3.0</td>
+                     <td data-title="อุปกร์">อ ว CD ท ม ก</td>
+                     <td data-title="ราคาเปิด">120,500</td>
+                     <td data-title="ราคาจบ">120,500</td>                  
+                  </tr>
+                   <tr>
+                     <td data-title="No"> 6 </td>
+                     <td data-title="ประเภท">กระบะ 4 ล้อ</td>
+                     <td data-title="วันที่ประมูล">12/10/2011</td>
+                     <td data-title="ยี่ห้อ">TOYOTA</td>
+                     <td data-title="รุ่น">COMMUTER</td>
+                     <td data-title="ปี">2003</td>
+                     <td data-title="สี">เทา</td>
+                     <td data-title="เกียร์">Auto</td>
+                     <td data-title="ซีซี">3.0</td>
+                     <td data-title="อุปกร์">อ ว CD ท ม ก</td>
+                     <td data-title="ราคาเปิด">120,500</td>
+                     <td data-title="ราคาจบ">120,500</td>                  
+                  </tr>
+                   <tr>
+                     <td data-title="No"> 7 </td>
+                     <td data-title="ประเภท">กระบะ 4 ล้อ</td>
+                     <td data-title="วันที่ประมูล">12/10/2011</td>
+                     <td data-title="ยี่ห้อ">TOYOTA</td>
+                     <td data-title="รุ่น">COMMUTER</td>
+                     <td data-title="ปี">2003</td>
+                     <td data-title="สี">เทา</td>
+                     <td data-title="เกียร์">Auto</td>
+                     <td data-title="ซีซี">3.0</td>
+                     <td data-title="อุปกร์">อ ว CD ท ม ก</td>
+                     <td data-title="ราคาเปิด">120,500</td>
+                     <td data-title="ราคาจบ">120,500</td>                  
+                  </tr>
+                   <tr>
+                     <td data-title="No"> 8  </td>
+                     <td data-title="ประเภท">กระบะ 4 ล้อ</td>
+                     <td data-title="วันที่ประมูล">12/10/2011</td>
+                     <td data-title="ยี่ห้อ">TOYOTA</td>
+                     <td data-title="รุ่น">COMMUTER</td>
+                     <td data-title="ปี">2003</td>
+                     <td data-title="สี">เทา</td>
+                     <td data-title="เกียร์">Auto</td>
+                     <td data-title="ซีซี">3.0</td>
+                     <td data-title="อุปกร์">อ ว CD ท ม ก</td>
+                     <td data-title="ราคาเปิด">120,500</td>
+                     <td data-title="ราคาจบ">120,500</td>                  
+                  </tr>
+                   <tr>
+                     <td data-title="No"> 9 </td>
+                     <td data-title="ประเภท">กระบะ 4 ล้อ</td>
+                     <td data-title="วันที่ประมูล">12/10/2011</td>
+                     <td data-title="ยี่ห้อ">TOYOTA</td>
+                     <td data-title="รุ่น">COMMUTER</td>
+                     <td data-title="ปี">2003</td>
+                     <td data-title="สี">เทา</td>
+                     <td data-title="เกียร์">Auto</td>
+                     <td data-title="ซีซี">3.0</td>
+                     <td data-title="อุปกร์">อ ว CD ท ม ก</td>
+                     <td data-title="ราคาเปิด">120,500</td>
+                     <td data-title="ราคาจบ">120,500</td>                  
+                  </tr>
+                   <tr>
+                     <td data-title="No"> 10 </td>
+                     <td data-title="ประเภท">กระบะ 4 ล้อ</td>
+                     <td data-title="วันที่ประมูล">12/10/2011</td>
+                     <td data-title="ยี่ห้อ">TOYOTA</td>
+                     <td data-title="รุ่น">COMMUTER</td>
+                     <td data-title="ปี">2003</td>
+                     <td data-title="สี">เทา</td>
+                     <td data-title="เกียร์">Auto</td>
+                     <td data-title="ซีซี">3.0</td>
+                     <td data-title="อุปกร์">อ ว CD ท ม ก</td>
+                     <td data-title="ราคาเปิด">120,500</td>
+                     <td data-title="ราคาจบ">120,500</td>                  
+                  </tr>
+        
+               
+               </tbody>
+            
+            
+            
+        </table>
+     </div>
+         
+</body>
+    
+</html>
+    

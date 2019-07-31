@@ -1,0 +1,110 @@
+@media screen {
+body {
+    margin: 0;
+      padding-top: 20px;
+
+    font: 12pt "Tahoma";
+}
+.desktop{
+  display: block;
+}
+.mobile{
+  display: none;
+}
+
+.mytable{
+
+  padding-left: 5 pt;
+}
+}
+
+
+* {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+.myhead {
+display:none;
+
+
+}
+.hrshow{
+  display:none;
+
+}
+@media screen and (max-width: 470px) {
+  .desktop{
+    display: none;
+  }
+  .mobile{
+    display: block;
+  }
+body {
+  margin: 0;
+  padding-top: 20px !important;
+      font: 8pt "Tahoma";
+  }
+.myhead {
+display:none;
+
+  font: 12pt "Tahoma";
+}
+
+}
+th{
+
+width: 50%;
+}
+* {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+
+
+@media print {
+
+  .no-print, .no-print *
+    {
+        display: none !important;
+    }
+    .showhead{
+      display: none;
+    }
+    .myhead {
+      display:block;
+      padding-top: 2cm;
+      font: 15pt "Tahoma";
+    }
+    .hrshow {
+      display:block;
+
+    }
+  body{
+      padding-top:0 px;
+      font:10pt "Tahoma";
+  }
+  .page {
+      width: 21cm;
+      min-height: 29.7cm;
+      padding-left: 2.5cm;
+  }
+  @page { margin: 0; }
+  .subpage {
+
+      height: 256mm;
+
+  }
+    .page {
+        size: A4;
+
+        margin: 0;
+        border: initial;
+        border-radius: initial;
+        width: initial;
+        min-height: initial;
+        box-shadow: initial;
+        background: initial;
+        page-break-after: always;
+    }
+}
