@@ -94,6 +94,15 @@ $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
     // output data of each row
+    ?>
+
+       <h4 class="text-center col-sm-12 myhead">Chiller daily inspection </h4>
+       <hr class="hrshow">
+
+     <hr class="no-print">
+
+
+    <?php
     $num=0;
     while($row = $result->fetch_assoc()) {
       $num=$num+1;
@@ -103,12 +112,7 @@ if ($result->num_rows > 0) {
  ?>
 
 
-
-
-   <h4 class="text-center col-sm-12 myhead">Chiller daily inspection </h4>
-   <hr class="hrshow">
-
- <hr class="no-print">
+ <br />
 
 
 <h4 class="no-print bg-light text-dark p-2 Chiller" style="text-align:center">Results Machine <?= $num; ?> </h4>
@@ -253,6 +257,7 @@ if ($result->num_rows > 0) {
        </tbody>
    </table>
  </div>
+
  <div style="page-break-after: always"></div>
 
 <?php

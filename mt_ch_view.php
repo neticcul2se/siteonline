@@ -106,10 +106,8 @@ if(isset($selectdate)){
   $sql = "SELECT * FROM mt_ch where addtime='$selectdate'";
   $result = $conn->query($sql);
 
-  $sql2 = "SELECT * FROM Question where groupq='MT_CH'";
-  $result2 = $conn->query($sql2);
 
-$num=1;
+
 
 
  ?>
@@ -133,7 +131,12 @@ $num=1;
           // output data of each row
               // output data of each row
               $num=1;
-              $row1 = $result->fetch_assoc();
+            //  $row1 = $result->fetch_assoc();
+              while($row1 = $result->fetch_assoc()){
+
+                  $num=1;
+              $sql2 = "SELECT * FROM Question where groupq='MT_CH'";
+              $result2 = $conn->query($sql2);
 
               while($row2 = $result2->fetch_assoc()) {
 
@@ -154,6 +157,14 @@ $num=1;
 
           <?php
           $num=$num+1;
+
+    }
+    ?>
+    <br /> <hr />
+    <div style="page-break-after: always"></div>
+    <br /><br />
+    <?php
+
 
     }
       } else {

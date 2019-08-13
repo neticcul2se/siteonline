@@ -258,47 +258,59 @@ require_once('site_condb.php');
   $id=$_SESSION["idvs1_3"];
   $date = new DateTime();
   $n_date = $date->format('d-m-Y');
-  $sql = "SELECT * FROM visy1_3 where id=$id";
+  $sql = "SELECT * FROM visy1_3 where addtime='$selectdate'";
   $result = $conn->query($sql);
 
-  $sql2 = "SELECT * FROM Question where groupq='visy1_3'";
-  $result2 = $conn->query($sql2);
 
-
-
-  $num=1;
-  ?>
-  <div class="tableresponsive all">
-  <table class="tabledata">
-         <thead>
-           <tr>
-               <th>Inspection Item</th>
-               <th>Tool / Method</th>
-               <th>STANDARD</th>
-               <th>STANDARD</th>
-               <th>A</th>
-               <th>B</th>
-
-           </tr>
-         </thead>
-         <tbody>
-  <form class="form" id="myform1 " name="form1" method="post" action="insertvisy1_3.php" >
-
-  <?php
 
 
   if ($result->num_rows > 0) {
-    // output data of each row
-    $num=1;
-  $row = $result->fetch_assoc();
-    while($row2 = $result2->fetch_assoc()) {
-
-      ///  echo "id: " . $row["id"]. " - Machine: " . $row["Machine"]. "<br>";
-
-
+  $num=1;
   ?>
+  <div class="tableresponsive all">
+  <h3 class="text-center"> Date Report <?php echo($_REQUEST["datepicker1"]); ?></h3>
+    <?php
 
-             <tr>
+
+
+      // output data of each row
+
+    while($row = $result->fetch_assoc()){
+
+?>
+<br />
+<p class="text-center"> VISY <?php  echo($row['type']); ?></p>
+
+<table class="tabledata">
+       <thead>
+         <tr>
+             <th>Inspection Item</th>
+             <th>Tool / Method</th>
+             <th>STANDARD</th>
+             <th>STANDARD</th>
+             <th>A</th>
+             <th>B</th>
+
+         </tr>
+       </thead>
+
+<?php
+$num=1;
+$sql2 = "SELECT * FROM Question where groupq='visy1_3'";
+$result2 = $conn->query($sql2);
+
+  while($row2 = $result2->fetch_assoc()) {
+
+    ///  echo "id: " . $row["id"]. " - Machine: " . $row["Machine"]. "<br>";
+
+
+?>
+
+
+
+         <tbody>
+
+         <tr>
              <td data-title="
   Inspection Item"> <?php echo($num.".".$row2['Question'] ); ?></td>
              <td data-title="Tool / Method"><?php echo($row2['Method'] ); ?> </td>
@@ -318,17 +330,11 @@ require_once('site_condb.php');
                echo($b);  ?></td>
            </tr>
 
+           <?php
+         $num=$num+1;
+         }
 
-
-
-
-
-  <?php
-  $num=$num+1;
-    }
-
-    ?>
-
+          ?>
 
     <tr>
       <td ><div class="desktop"><b>Inspector</b>   </div> </td>
@@ -338,18 +344,27 @@ require_once('site_condb.php');
     </tr>
 
 
-    <?php
-  }
-
-  ?>
 
 
-  </form>
+
    </tbody>
 
 
    </table>
+
+
+   </div>
+   <div style="page-break-after: always"></div>
+
+   <?php
+
+}
+
+
+}
+ ?>
   </div>
+
   <?php
 
 }
