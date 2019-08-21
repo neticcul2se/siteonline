@@ -21,27 +21,51 @@ $sheet->setCellValue('E1', 'STANDARD');
 $sheet->setCellValue('F1', 'A');
 $sheet->setCellValue('G1', 'B');
 
-$sql2 = "SELECT * FROM Question where groupq ='visy4_5'";
+$sql = "SELECT * FROM visy1_3 where id ='8'";
+$result = $conn->query($sql);
+
+$sql2 = "SELECT * FROM Question where groupq ='visy1_3'";
 $result2 = $conn->query($sql2);
-$num=1;
-$lp=2;
-$users = $result2->fetch_all(MYSQLI_ASSOC); //faster 
+
+
+$num2=1;
+$lp2=2;
+
+$data = $result->fetch_all(MYSQLI_ASSOC); //faster 
+$data2 = $result2->fetch_all(MYSQLI_ASSOC); //faster 
 
 //print_r($users[1]);
-    foreach($users as $u) {
+foreach($data as $u1) {
+    foreach($data2 as $u) {
         $asa=(string)$u["STANDARD_A"];
         $asb=(string)$u["STANDARD_A"];
-        $sheet->setCellValue('A'.$lp, $num);
-        $sheet->setCellValue('B'.$lp, $u['Question']);
-        $sheet->setCellValue('C'.$lp, $u['Method']);
-        $sheet->setCellValue('D'.$lp, $asa);
-        $sheet->setCellValue('E'.$lp, $asb);
+        $sheet->setCellValue('A'.$lp2, $num2);
+        $sheet->setCellValue('B'.$lp2, $u['Question']);
+        $sheet->setCellValue('C'.$lp2, $u['Method']);
+        $sheet->setCellValue('D'.$lp2, $asa);
+        $sheet->setCellValue('E'.$lp2, $asb);
 
+        
+            $str='as'.$num2;
+            $myArray = explode(',', $u1[$str]);
+            $a=(string)$myArray[0];
+            $b=(string)$myArray[1];
+            $sheet->setCellValue('F'.$lp2, $a);
+            $sheet->setCellValue('G'.$lp2, $b);
 
-        $num++;
-        $lp++;
+            $num2++;
+            $lp2++;
+        }
+
+       
+        $sheet->setCellValue('G'.$lp2, $u1['Inspector']);
+
 }
-$sheet->setCellValue('E'.$lp, "Inspector");
+
+$sheet->setCellValue('E'.$lp2, "Inspector");
+
+
+
 //   while($row2 = $result2->fetch_assoc()) {
 //     $sheet->setCellValue('A'.$lp, $num.'.'.$row2['Question']);
 //     $sheet->setCellValue('B'.$lp, $row2['Method']); 
