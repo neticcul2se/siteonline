@@ -45,7 +45,7 @@ $as38 = mysqli_real_escape_string($conn, $_REQUEST['input_as38'].",". $_REQUEST[
 $inspector = mysqli_real_escape_string($conn, $_REQUEST['inspector']);
 
 $date = new DateTime();
-$n_date = $date->format('d/m/Y');
+$n_date = mysqli_real_escape_string($conn, $_REQUEST['datepicker1']);
 
 $sql = "INSERT INTO visy1_3 ( as1, as2, as3, as4, as5, as6, as7, as8, as9 , as10
 , as11, as12, as13, as14, as15, as16, as17, as18, as19 , as20
