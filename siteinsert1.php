@@ -34,10 +34,9 @@ $as27 = mysqli_real_escape_string($conn, $_REQUEST['input_as27']);
 $as28 = mysqli_real_escape_string($conn, $_REQUEST['input_as28']);
 $as29 = mysqli_real_escape_string($conn, $_REQUEST['input_as29']);
 $as30 = mysqli_real_escape_string($conn, $_REQUEST['input_as30']);
-$as31 = mysqli_real_escape_string($conn, $_REQUEST['input_as31']);
+$as31 = mysqli_real_escape_string($conn, $_REQUEST['input_as31']);   
 $date = new DateTime();
-$n_date = $date->format('d/m/Y');
-
+$n_date = mysqli_real_escape_string($conn, $_REQUEST['datepicker1']);
 
 $sql = "INSERT INTO machine (machine, as1, as2, as3, as4, as5, as6, as7, as8, as9 , as10
 , as11, as12, as13, as14, as15, as16, as17, as18, as19 , as20
