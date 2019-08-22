@@ -49,6 +49,12 @@ display:none;
 
   font: 12pt "Tahoma";
 }
+.viewdata{
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-top: 5px;
+
+}
 
 }
 th{

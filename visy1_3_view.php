@@ -218,17 +218,42 @@ require_once('site_condb.php');
 <div class="container">
 <!-- form input -->
 <!-- Default form contact -->
+
 <h4 class="text-center col-sm-12 showhead">VISY CHILLER 1-3 </h4>
 <hr class="showhead"/>
+<div class="row">
+  <div class="col-sm-9">
+  <form class="no-print form" id="myform2  " name="form2" method="get" action="visy1_3_view.php" >
+    <div class="form-group row ">
+    <div class=" col-sm-4 inmachine"> <label for="dateselect" class=" col-form-label " >Select date </label> </div>
+    <div class="col-sm-4 inmachine"> <input class="inmachine" data-date-format="dd/mm/yyyy" id="datepicker" name="datepicker1"> </div>
+    <button type="submit" name="btn_submit" id="btn_submit" value="1" class="btn btn-primary col-sm-4 viewdata">View data</button>
 
- <form class="no-print form" id="myform2  " name="form2" method="get" action="visy1_3_view.php" >
-   <div class="form-group row ">
-  <div class="col-sm-4 inmachine"> <label for="dateselect" class="col-sm-4 col-form-label " >Select date </label> </div>
-  <div class="col-sm-4 inmachine"> <input class="inmachine" data-date-format="dd/mm/yyyy" id="datepicker" name="datepicker1"> </div>
-  <button type="submit" name="btn_submit" id="btn_submit" value="1" class="btn btn-primary col-sm-4 ">View data</button>
+  </div>
+  </form>
+  </div>
+  <div class="col-sm-3">
+  <form class="no-print form" id="myform3  " name="form2" method="get" action="form_edit1_3.php">
+<input type="hidden" name="date" value="<?php  echo ($selectdate=$_REQUEST["datepicker1"]);?>">
+ <?php 
+  $selectdate=$_REQUEST["datepicker1"];
+  if(isset($selectdate)){
+  $sql = "SELECT * FROM visy1_3 where addtime='$selectdate'";
+  $result = $conn->query($sql);
+  while($row = $result->fetch_assoc()){
+    $_SESSION["idv"] =$row['id'];
+  }
+  $idv= $_SESSION["idv"];
+  }
+  ?>
+  <input type="hidden" name="id" value="<?php echo($idv);?>">
 
-</div>
+  <button type="submit" name="btn_submit" id="btn_submit" value="1" class="btn btn-primary col-sm-4 ">edit</button>
 </form>
+  </div>
+</div>
+
+
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.min.js"></script>
@@ -257,10 +282,12 @@ require_once('site_condb.php');
   $selectdate=$_REQUEST["datepicker1"];
   if(isset($selectdate)){
   $id=$_SESSION["idvs1_3"];
+
   $date = new DateTime();
   $n_date = $date->format('d-m-Y');
   $sql = "SELECT * FROM visy1_3 where addtime='$selectdate'";
   $result = $conn->query($sql);
+
 
 
 
@@ -277,7 +304,7 @@ require_once('site_condb.php');
       // output data of each row
 
     while($row = $result->fetch_assoc()){
-
+     
 ?>
 <br />
 <p class="text-center"> VISY <?php  echo($row['type']); ?></p>
