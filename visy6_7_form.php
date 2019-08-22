@@ -4,7 +4,6 @@ session_start();
 
 require_once('site_condb.php');
 
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
