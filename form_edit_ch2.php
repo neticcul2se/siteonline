@@ -3,9 +3,9 @@
 session_start();
 
 require_once('site_condb.php');
-$id=$_SESSION["idvisy"];
+$idv=$_REQUEST["id"];
 
-
+$datee=$_REQUEST["date"];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -141,12 +141,32 @@ require_once('menu.php');
 <h3 class="text-center pt-2 pb-2 bg-light  col-sm-12 Chiller">MEKTEC WATER COOLED WATER CHILLER INSPECTION SHEET </h3>
 <hr>
 <br>
+<?php
+  //$id=$_SESSION["idvs1_3"];
+  $_SESSION["idv"]=$_REQUEST["id"];
+  $date = new DateTime();
+  $n_date = $date->format('d-m-Y');
+  $sql1 = "SELECT * FROM mt_ch2 where id='$idv'";
+  $result1 = $conn->query($sql1);
+
+  $sql2 = "SELECT * FROM Question where groupq='CH'";
+  $result2 = $conn->query($sql2);
 
 
-<form class="form" id="myform1 " name="form1" method="post" action="insert_ch2.php" >
+
+$num=1;
+?>
+<?php
+
+
+if ($result1->num_rows > 0) {
+    // output data of each row
+    $num=1;
+$row1 = $result1->fetch_assoc();
+?>
+
+<form class="form" id="myform1 " name="form1" method="post" action="edit_ch2.php" >
 <div class="form-group row ">
-<div class="col-sm-4 inmachine"> <label for="dateselect" class="col-form-label " ><strong>Select date </strong></label> </div>
-  <div class="col-sm-4 inmachine"> <input class="inmachine" data-date-format="dd/mm/yyyy" id="datepicker" name="datepicker1"> </div>
  </div>
  
 
@@ -169,7 +189,7 @@ if ($result->num_rows > 0) {
  <div class="form-group row ">
     <label for="input_as<?=$num;?>" class="col-sm-9 col-form-label "><b><?php echo($num.".".$row['Question']); ?></b></label>
     <div class="col">
-      <input type="text" class="form-control" name="input_as<?=$num;?>" id="input_as<?=$num;?>"
+      <input type="text" class="form-control" value="<?php $str='as'.$num; echo($row1[$str]); ?>" name="input_as<?=$num;?>" id="input_as<?=$num;?>"
       autocomplete="off" value="" placeholder="Your answer">
     </div>
 </div>
@@ -187,6 +207,8 @@ $num=$num+1;
 <div class="form-group row  ">
 
     <div class="col text-center ">
+    <input type="hidden" name="date" value="<?php echo($datee); ?>">
+
          <button type="submit" name="btn_submit" id="btn_submit" value="1" class="btn btn-primary pl-5 pr-5">SEND DATA</button>
     </div>
 </div>
@@ -194,7 +216,10 @@ $num=$num+1;
 
 
 </div>
+<?php
+  }
 
+ ?>
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

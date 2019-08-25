@@ -232,6 +232,7 @@ require_once('site_condb.php');
   </div>
   </form>
   </div>
+  
   <div class="col-sm-3">
   <form class="no-print form" id="myform3  " name="form2" method="get" action="form_edit1_3.php">
 <input type="hidden" name="date" value="<?php  echo ($selectdate=$_REQUEST["datepicker1"]);?>">
