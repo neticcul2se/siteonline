@@ -62,15 +62,42 @@ require_once('site_condb.php');
 <!-- Default form contact -->
 <h4 class="text-center col-sm-12 showhead">Chiller daily inspection </h4>
 <hr class="showhead"/>
-
+<div class="row">
+<div class="col-sm-9">
  <form class="no-print form" id="myform2  " name="form2" method="get" action="site_viewmachine.php" >
    <div class="form-group row ">
-  <div class="col-sm-4 inmachine"> <label for="dateselect" class="col-sm-4 col-form-label " >Select date </label> </div>
+  <div class="col-sm-4 inmachine"> <label for="dateselect" class=" col-form-label " >Select date </label> </div>
   <div class="col-sm-4 inmachine"> <input class="inmachine" data-date-format="dd/mm/yyyy" id="datepicker" name="datepicker1"> </div>
-  <button type="submit" name="btn_submit" id="btn_submit" value="1" class="btn btn-primary col-sm-4 ">View data</button>
+  <button type="submit" name="btn_submit" id="btn_submit" value="1" class="btn btn-primary col-sm-4  ">View data</button>
 
-</div>
+  </div>
 </form>
+</div>
+
+
+
+<div class="col-sm-3">
+  <form class="no-print form" id="myform3  " name="form2" method="get" action="form_edit_site.php">
+    
+<input type="hidden" name="date" value="<?php  echo ($selectdate=$_REQUEST["datepicker1"]);?>">
+ <?php 
+  $selectdate=$_REQUEST["datepicker1"];
+  if(isset($selectdate)){
+  $sql = "SELECT * FROM machine where addtime='$selectdate'";
+  $result = $conn->query($sql);
+  while($row = $result->fetch_assoc()){
+    $_SESSION["idv"] =$row['id'];
+  }
+  $idv= $_SESSION["idv"];
+  }
+  ?>
+  <input type="hidden" name="id" value="<?php echo($idv);?>">
+
+  <button type="submit" name="btn_submit" id="btn_submit" value="1" class="btn btn-primary col-sm-4 ">edit</button>
+</form>
+  </div>
+</div>
+
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.min.js"></script>
