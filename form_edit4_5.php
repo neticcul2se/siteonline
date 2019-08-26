@@ -13,22 +13,20 @@ $datee=$_REQUEST["date"];
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
       <!-- Bootstrap CSS -->
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.min.css" rel="stylesheet"/>
+
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link rel="stylesheet" href="a4.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
-<style>
-@media print {
-.all{
-      margin:0;
+    <style media="screen">
 
 
+.desktop{
+  display: block;
 }
-.headmt{
-  padding-top: 50px;
+.mobile{
+  display: none;
 }
-}
-
 
          *{margin:0;padding:0;}
 
@@ -37,9 +35,7 @@ $datee=$_REQUEST["date"];
 
         margin:15px auto;
         }
-            th{
-              width: auto !important;
-            }
+
         .tabledata{
         width:100%;
         padding:0;
@@ -78,62 +74,119 @@ $datee=$_REQUEST["date"];
 
         }
         .tabledataa tbody tr:hover td{
-        background:#e5e5e5;
+        background:#7f7f7f;
 
         }
-  @media screen and (max-width: 470px) {
-  .tableresponsive table,
-  .tableresponsive thead,
-  .tableresponsive tbody,
-  .tableresponsive th,
-  .tableresponsive td,
-  .tableresponsive tr
-  {
 
-     display:block ;
 
+
+
+
+
+    @media screen and (max-width: 470px) {
+    body {
+
+      margin: 0;
+      padding-top: 0px !important;
+          font: 8pt "Tahoma";
+        padding-left: 10px;
+        padding-right: 10px;
+
+      }
+      .inmachine{
+
+        text-align: center;
+
+      }
+      .Chiller{
+                font: 12pt "Tahoma";
+      }
+      .col-form-label{
+        padding: 0;
+        margin: 0;
+        float: left;
+
+      }
+
+
+      .tableresponsive table,
+      .tableresponsive thead,
+      .tableresponsive tbody,
+      .tableresponsive th,
+      .tableresponsive td,
+      .tableresponsive tr
+      {
+
+         display:block ;
+
+      }
+  .tabledata tbody tr td{
+    text-align: left;
   }
-.tabledata tbody tr td{
-text-align: left;
-}
-  .tableresponsive thead tr {
-   position: absolute ;
-   top: -9999px;
-   left: -9999px;
-  }
-  .tableresponsive tr { border: 1px solid #ccc; }
+      .tableresponsive thead tr {
+       position: absolute ;
+       top: -9999px;
+       left: -9999px;
+      }
+      .tableresponsive tr { border: 1px solid #ccc; }
 
-  .tableresponsive td {
+      .tableresponsive td {
 
-      border: none;
-      border-bottom: 1px solid #eee;
-      position: relative;
-      padding-left: 45% !important;
-      white-space: normal;
-      text-align:left;
+          border: none;
+          border-bottom: 1px solid #eee;
+          position: relative;
+          padding-left: 45% !important;
+          white-space: normal;
+          text-align:left;
 
 
-   }
+       }
 
-   .tableresponsive td:before {
+       .tableresponsive td:before {
 
-      position: absolute;
-      top: 6px;
-      left: 6px;
-      width: 40%;
-      padding-right: 10px;
-      white-space: nowrap;
-      text-align:left;
-      font-weight: bold;
-       border-right: 1px solid #d6d6d6;
+          position: absolute;
+          top: 6px;
+          left: 6px;
+          width: 40%;
+          padding-right: 10px;
+
+          white-space: nowrap;
+          text-align:left;
+          font-weight: bold;
+           border-right: 1px solid #d6d6d6;
+        }
+
+
+       .tableresponsive td:before { content: attr(data-title); }
+
+
+       .desktop{
+         display: none;
+       }
+       .mobile{
+         display: block;
+       }
+
+
     }
 
 
-   .tableresponsive td:before { content: attr(data-title); }
 
 
-}
-</style>
+    </style>
+
+    <script type="text/javascript">
+    $(function(){
+         $("#myform1").on("submit",function(){
+             var form = $(this)[0];
+            if (form.checkValidity() === false) {
+              event.preventDefault();
+              event.stopPropagation();
+            }
+            form.classList.add('was-validated');
+         });
+    });
+    </script>
 </head>
 <body>
 
