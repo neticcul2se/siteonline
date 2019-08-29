@@ -71,6 +71,7 @@
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="visy1_3_form.php">insert Visy 1-3</a>
             <a class="dropdown-item" href="visy1_3_view.php">view Visy 1-3 </a>
+            <a class="dropdown-item" href="export_visy1_3.php">export Visy 1-3 </a>
               </div>
           </li>
 
@@ -81,6 +82,8 @@
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="visy4_5_form.php">insert Visy 4-5</a>
             <a class="dropdown-item" href="visy4_5_view.php">view Visy 4-5 </a>
+            <a class="dropdown-item" href="export_visy4_5.php">export Visy 4-5 </a>
+
               </div>
           </li>
           <li class="nav-item dropdown">
