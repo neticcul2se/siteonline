@@ -206,22 +206,20 @@ require_once('condb.php');
 <!-- form input -->
 <!-- Default form contact -->
 
-<h3 class="text-center pt-2 pb-2 bg-light  col-sm-12 Chiller">Export Data Visy 4-5  </h3>
+<h3 class="text-center pt-2 pb-2 bg-light  col-sm-12 Chiller">Export Data Visy 6-7  </h3>
 
 
-    <form class="form" id="myform1 " name="form1" method="post" action="excel_visy4_5.php" >
+    <form class="form" id="myform1 " name="form1" method="post" action="excel_visy6_7.php" >
 
 
    
-
-  
     <div class="form-group row ">
 
-<label for="select_Machine" class="col-sm-6 col-form-label inmachine" ><b>Select visy 4 - 5  </b></label>
+<label for="select_Machine" class="col-sm-6 col-form-label inmachine" ><b>Select visy 6 - 7  </b></label>
     <div class="col-sm-6 inmachine ">
        <select class="custom-Machine required" name="select_visy" id="select_visy" required>
-        <option value="4" checked>4</option>
-        <option value="5">5</option>
+        <option value="6" checked>7</option>
+        <option value="7">7</option>
       </select>
       <div class="invalid-feedback">
         Select visy

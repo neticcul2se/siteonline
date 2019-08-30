@@ -221,6 +221,19 @@ require_once('site_condb.php');
 <h4 class="text-center col-sm-12 showhead">VISY CHILLER 6-7 </h4>
 <hr class="showhead"/>
 
+<div class="form-group row ">
+
+<label for="select_Machine" class="col-sm-6 col-form-label inmachine" ><b>Select visy 6 - 7  </b></label>
+    <div class="col-sm-6 inmachine ">
+       <select class="custom-Machine required" name="select_visy" id="select_visy" required>
+        <option value="6" checked>6</option>
+        <option value="7">7</option>
+      </select>
+      <div class="invalid-feedback">
+        Select visy
+      </div>
+    </div>
+</div>
 <div class="row">
   <div class="col-sm-9">
   <form class="no-print form" id="myform2  " name="form2" method="get" action="visy6_7_view.php" >
@@ -237,8 +250,10 @@ require_once('site_condb.php');
 <input type="hidden" name="date" value="<?php  echo ($selectdate=$_REQUEST["datepicker1"]);?>">
  <?php 
   $selectdate=$_REQUEST["datepicker1"];
+  $types=$_REQUEST["select_visy"];
+
   if(isset($selectdate)){
-  $sql = "SELECT * FROM visy6_7 where addtime='$selectdate'";
+  $sql = "SELECT * FROM visy6_7 where addtime='$selectdate' AND type='$types' ";
   $result = $conn->query($sql);
   while($row = $result->fetch_assoc()){
     $_SESSION["idv"] =$row['id'];
@@ -248,7 +263,7 @@ require_once('site_condb.php');
   ?>
   <input type="hidden" name="id" value="<?php echo($idv);?>">
 
-  <button type="submit" name="btn_submit" id="btn_submit" value="1" class="btn btn-primary col-sm-4 ">edit</button>
+  <button type="submit" name="btn_submit" id="btn_submit" value="1" class="btn btn-primary col-sm-4 edit1">edit</button>
 </form>
   </div>
 </div>
@@ -282,7 +297,9 @@ require_once('site_condb.php');
   $id=$_SESSION["idvs6_7"];
   $date = new DateTime();
   $n_date = $date->format('d-m-Y');
-  $sql = "SELECT * FROM visy6_7 where addtime='$selectdate'";
+  $types=$_REQUEST["select_visy"];
+
+  $sql = "SELECT * FROM visy6_7 where addtime='$selectdate' AND type='$types'";
   $result = $conn->query($sql);
 
 

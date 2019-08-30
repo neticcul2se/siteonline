@@ -214,12 +214,22 @@ require_once('condb.php');
 
    
 
-  <div class="form-group row ">
-       
-    
-     
+    <div class="form-group row ">
 
-  </div>
+<label for="select_Machine" class="col-sm-6 col-form-label inmachine" ><b>Select visy 1 - 3  </b></label>
+    <div class="col-sm-6 inmachine ">
+       <select class="custom-Machine required" name="select_visy" id="select_visy" required>
+        <option value="1" checked>1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+      </select>
+      <div class="invalid-feedback">
+        Select visy
+      </div>
+    </div>
+</div>
+
+
   <div class="row">
 
   <div class="col-3"> <p><b>Please select Date or Month </b></p> </div>

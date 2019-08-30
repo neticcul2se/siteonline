@@ -93,6 +93,8 @@
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="visy6_7_form.php">insert Visy 6-7</a>
             <a class="dropdown-item" href="visy6_7_view.php">view Visy 6-7 </a>
+            <a class="dropdown-item" href="export_visy6_7.php">export Visy 6-7 </a>
+
               </div>
           </li>
           <li class="nav-item dropdown">

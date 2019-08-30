@@ -8,6 +8,7 @@ $spreadsheet = new Spreadsheet();
 
 $dates  = mysqli_real_escape_string($conn, $_REQUEST['datepicker1']);
 $md  = mysqli_real_escape_string($conn, $_REQUEST['md']);
+$types=$_REQUEST["select_visy"];
 
 // 
 $i=1;
@@ -46,7 +47,7 @@ $sheet->setCellValue('G1', 'B');
 
     if($md=='date'){
 
-    $sql = "SELECT * FROM visy4_5 where addtime	 ='$dates'";
+    $sql = "SELECT * FROM visy4_5 where addtime	 ='$dates' and type='$types'";
     $result = $conn->query($sql);
 
 
@@ -60,7 +61,7 @@ $sheet->setCellValue('G1', 'B');
 
         }
 
-        $sql = "SELECT * FROM visy4_5 where addtime like '$strdate'";
+        $sql = "SELECT * FROM visy4_5 where addtime like '$strdate' and type='$types'";
         $result = $conn->query($sql);
     }
     $data = $result->fetch_all(MYSQLI_ASSOC); //faster

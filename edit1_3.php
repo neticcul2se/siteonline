@@ -95,7 +95,7 @@ WHERE id = '$id'";
 
 $conn->query($sql);
 
-header("location: visy1_3_view.php?datepicker1=$n_date" );
+header("location: visy1_3_view.php?datepicker1=$n_date&select_visy=$visy" );
 exit(0);
 
 ?>

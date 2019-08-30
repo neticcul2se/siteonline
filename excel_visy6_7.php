@@ -43,12 +43,11 @@ $sheet->setCellValue('D1', 'STANDARD');
 $sheet->setCellValue('E1', 'STANDARD');
 $sheet->setCellValue('F1', 'A');
 $sheet->setCellValue('G1', 'B');
-
 $types  = mysqli_real_escape_string($conn, $_REQUEST['select_visy']);
 
     if($md=='date'){
 
-    $sql = "SELECT * FROM visy1_3 where addtime	 ='$dates' and type='$types'";
+    $sql = "SELECT * FROM visy6_7 where addtime	 ='$dates' and type='$types'";
     $result = $conn->query($sql);
 
 
@@ -62,12 +61,12 @@ $types  = mysqli_real_escape_string($conn, $_REQUEST['select_visy']);
 
         }
 
-        $sql = "SELECT * FROM visy1_3 where addtime like '$strdate' and type='$types'";
+        $sql = "SELECT * FROM visy6_7 where addtime like '$strdate' and type='$types'";
         $result = $conn->query($sql);
     }
     $data = $result->fetch_all(MYSQLI_ASSOC); //faster
 //  echo $sql;
-$sql2 = "SELECT * FROM Question where groupq ='visy1_3'";
+$sql2 = "SELECT * FROM Question where groupq ='visy6_7'";
 $result2 = $conn->query($sql2);
 
 
@@ -140,9 +139,9 @@ $spreadsheet->setActiveSheetIndex(0);
 $writer = new Xlsx($spreadsheet);
 if($md=='date'){
     $newDate = str_replace('/', '-', $dates );
-$filename = 'visy1_3_'.$newDate;
+$filename = 'visy6_7_'.$newDate;
 }else{
-    $filename = 'visy1_3_month_'.$select_month;
+    $filename = 'visy6_7_month_'.$select_month;
 
 
 }

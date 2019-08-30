@@ -92,10 +92,10 @@ Inspector='$inspector',
 type='$visy'
 WHERE id = '$id'";
 
-
+//echo $sql;
 $conn->query($sql);
 
-header("location: visy4_5_view.php?datepicker1=$n_date" );
+header("location: visy4_5_view.php?datepicker1=$n_date&select_visy=$visy" );
 exit(0);
 
 ?>
