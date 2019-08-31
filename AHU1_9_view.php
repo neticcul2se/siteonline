@@ -225,6 +225,28 @@ require_once('site_condb.php');
 <div class="row">
   <div class="col-sm-9">
   <form class="no-print form" id="myform2  " name="form2" method="get" action="AHU1_9_view.php" >
+
+ <div class="form-group row ">
+
+<label for="select_Machine" class="col-sm-6 col-form-label inmachine" ><b>Select AHU 1 - 9 </b></label>
+    <div class="col-sm-6 inmachine ">
+       <select class="custom-Machine required" name="select_visy" id="select_visy" required>
+        <option value="1" checked>1</option>
+        <option value="2">2</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+
+      </select>
+      <div class="invalid-feedback">
+        Select visy
+      </div>
+    </div>
+</div>
+
     <div class="form-group row ">
     <div class=" col-sm-4 inmachine"> <label for="dateselect" class=" col-form-label " >Select date </label> </div>
     <div class="col-sm-4 inmachine"> <input class="inmachine" data-date-format="dd/mm/yyyy" id="datepicker" name="datepicker1"> </div>
@@ -238,8 +260,10 @@ require_once('site_condb.php');
 <input type="hidden" name="date" value="<?php  echo ($selectdate=$_REQUEST["datepicker1"]);?>">
  <?php 
   $selectdate=$_REQUEST["datepicker1"];
+  $types=$_REQUEST["select_visy"];
+
   if(isset($selectdate)){
-  $sql = "SELECT * FROM AHU1_9 where addtime='$selectdate'";
+  $sql = "SELECT * FROM AHU1_9 where addtime='$selectdate' AND type='$types'";
   $result = $conn->query($sql);
   while($row = $result->fetch_assoc()){
     $_SESSION["idv"] =$row['id'];
@@ -249,7 +273,7 @@ require_once('site_condb.php');
   ?>
   <input type="hidden" name="id" value="<?php echo($idv);?>">
 
-  <button type="submit" name="btn_submit" id="btn_submit" value="1" class="btn btn-primary col-sm-4 ">edit</button>
+  <button type="submit" name="btn_submit" id="btn_submit" value="1" class="btn btn-primary col-sm-4 edit1">edit</button>
 </form>
   </div>
 </div>
@@ -268,6 +292,7 @@ require_once('site_condb.php');
 
     <h4 class="text-center col-sm-12 myhead">AHU 1-9 </h4>
     <hr class="hrshow">
+    
 
  <hr class="no-print">
 
@@ -277,11 +302,13 @@ require_once('site_condb.php');
     <div class="subpage">
 
   <?php
+      $types=$_REQUEST["select_visy"];
+
   $selectdate=$_REQUEST["datepicker1"];
   if(isset($selectdate)){
   $date = new DateTime();
   $n_date = $date->format('d-m-Y');
-  $sql = "SELECT * FROM AHU1_9 where addtime='$selectdate'";
+  $sql = "SELECT * FROM AHU1_9 where addtime='$selectdate' AND type='$types'";
   $result = $conn->query($sql);
 
 

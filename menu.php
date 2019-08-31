@@ -104,6 +104,8 @@
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="AHU1_9_form.php">insert AHU 1-9</a>
             <a class="dropdown-item" href="AHU1_9_view.php">view AHU 1-9 </a>
+            <a class="dropdown-item" href="export_AHU1_9.php">export AHU 1-9 </a>
+
               </div>
           </li>
 

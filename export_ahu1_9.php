@@ -209,17 +209,32 @@ require_once('condb.php');
 <h3 class="text-center pt-2 pb-2 bg-light  col-sm-12 Chiller">Export Data AHU 1-9  </h3>
 
 
-    <form class="form" id="myform1 " name="form1" method="post" action="excel_visy1_3.php" >
+    <form class="form" id="myform1 " name="form1" method="post" action="excel_AHU1_9.php" >
 
 
    
 
-  <div class="form-group row ">
-       
-    
-     
+    <div class="form-group row ">
 
-  </div>
+<label for="select_Machine" class="col-sm-6 col-form-label inmachine" ><b>Select AHU 1 - 9 </b></label>
+    <div class="col-sm-6 inmachine ">
+       <select class="custom-Machine required" name="select_visy" id="select_visy" required>
+        <option value="1" checked>1</option>
+        <option value="2">2</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+
+      </select>
+      <div class="invalid-feedback">
+        Select visy
+      </div>
+    </div>
+</div>
+
   <div class="row">
 
   <div class="col-3"> <p><b>Please select Date or Month </b></p> </div>

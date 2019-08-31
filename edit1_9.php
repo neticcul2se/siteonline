@@ -74,7 +74,7 @@ WHERE id = '$id'";
 
 $conn->query($sql);
 
-header("location: AHU1_9_view.php?datepicker1=$n_date" );
+header("location: AHU1_9_view.php?datepicker1=$n_date&select_visy=$visy");
 exit(0);
 
 ?>
